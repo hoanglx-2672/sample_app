@@ -21,16 +21,24 @@ en:
     vie: "Vietnamese"
   title: "Ruby on Rails Tutorial Sample App"
   signup: "Sign up"
+  gmail:
+    activeuser:
+      title: "this is mail sample app"
+      header: "hi %{user} Welcome to the Sample App"
+      content: "Click on the link to activate your account %{user}"
   user:
     name: "Your name"
     password: "password"
     confirmpass: "confirm password"
-    deleted: "da xoa"
+    deleted: "Delete"
+    accactive: "Account activated!"
   activerecord:
     flash:
       pleaselogin: "yeu cau dang nhap"
       update: "cap nhat thong tin"
       delete: "Delete fail!"
+      gmail:
+        active: "Invalid activation link"
     errors:
       user:
         attributes:

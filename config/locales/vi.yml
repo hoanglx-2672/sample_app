@@ -21,12 +21,18 @@ vi:
     vie: "Viet"
   title: "hướng dẫn ruby on rails"
   signup: "đăng ký"
+  gmail:
+    activeuser:
+      title: "day la mail cua sample app"
+      header: "chao %{user} Sample App chao mung ban"
+      content: "click link duoi day de chay san pham %{user}"
   user:
     email: "email"
     name: "ten cua ban"
     password: "mat khau"
     confirmpass: "nhap lai mat khau"
     deleted: "da xoa"
+    accactive: "kich hoat tai khoan!"
   activerecord:
     flash:
       pleaselogin: "yeu cau dang nhap"
@@ -40,4 +46,6 @@ vi:
             valid: "định dạng đúng email"
             length: "độ dài 255 ký tự"
         login:
-          invalid: "Invalid emails or password"
+          invalid: "sai email va mat khau"
+        gmail:
+          active: "click vao de kich hoat"

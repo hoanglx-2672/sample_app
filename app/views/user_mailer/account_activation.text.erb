@@ -1,0 +1,4 @@
+<%= I18n.t("gmail.activeuser.header")  %>,
+<%= I18n.t("gmail.activeuser.content") %>:
+<%= edit_account_activation_url(id: @user.activation_token, email:
+  @user.email) %>
