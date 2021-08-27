@@ -8,3 +8,4 @@ validator:
       pass_min: 6
 perpag: 8
 sizeAva: 80
+expired: 1
