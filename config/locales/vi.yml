@@ -10,3 +10,16 @@ vi:
     vie: "Viet"
   title: "hướng dẫn ruby on rails"
   signup: "đăng ký"
+  user:
+    email: "email"
+    name: "ten cua ban"
+    password: "mat khau"
+    confirmpass: "nhap lai mat khau"
+  activerecord:
+    errors:
+      user:
+        attributes:
+          email:
+            blank: "Khong de trong"
+            valid: "định dạng đúng email"
+            length: "độ dài 255 ký tự"

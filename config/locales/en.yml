@@ -10,3 +10,15 @@ en:
     vie: "Vietnamese"
   title: "Ruby on Rails Tutorial Sample App"
   signup: "Sign up"
+  user:
+    name: "Your name"
+    password: "password"
+    confirmpass: "confirm password"
+  activerecord:
+    errors:
+      user:
+        attributes:
+          email:
+            blank: "cannot be empty"
+            valid: "must be an valid email"
+            length: "length 255"
