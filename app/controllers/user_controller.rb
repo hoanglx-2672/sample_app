@@ -6,6 +6,7 @@ class UserController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      log_in @user
       flash[:success] = t "home.welcome"
       redirect_to @user
     else
@@ -19,6 +20,14 @@ class UserController < ApplicationController
 
     flash[:danger] = t "home.nil_user"
     redirect_to root_path
+  end
+
+  def logged_in_user
+    return if logged_in?
+
+    store_location
+    flash[:danger] = "Please log in."
+    redirect_to login_url
   end
 
   private
