@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, except: [:new, :show, :create]
-  before_action :load_user, only: [:show, :edit, :update, :destroy,
-                  :correct_user]
+  before_action :load_user, only: [:show, :destroy, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
   def index
     @users = User.latest.activated_true.page(params[:page]).per(Settings.perpag)
+  end
+
+  def show
+    @microposts = @user.microposts.page(params[:page])
   end
 
   def new
@@ -18,13 +21,11 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       flash[:info] = t "gmail.check_mail"
-      redirect_to root_path
+      redirect_to root_url
     else
       render :new
     end
   end
-
-  def show; end
 
   def edit; end
 
@@ -46,19 +47,25 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def following
+    @title = t "follow.following"
+    @user = User.find_by(id: params[:id])
+    @users = @user.following.page(params[:page])
+    render "show_follow"
+  end
+
+  def followers
+    @title = t "follow.follower"
+    @user = User.find_by(id: params[:id])
+    @users = @user.followers.page(params[:page])
+    render "show_follow"
+  end
+
   private
 
   def user_params
     params.require(:user)
           .permit(:email, :name, :password, :password_confirmation)
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t "activerecord.flash.pleaselogin"
-    redirect_to login_url
   end
 
   def correct_user

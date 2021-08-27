@@ -1,17 +1,23 @@
 class PasswordResetsController < ApplicationController
-  before_action :load_user, :valid_user,
-                :check_expiration, only: [:edit, :update]
-  before_action :load_user_with_email, only: [:create]
+  before_action :load_user, only: [:edit, :update]
+  before_action :valid_user, only: [:edit, :update]
+  before_action :check_expiration, only: [:edit, :update]
 
   def new; end
 
   def edit; end
 
   def create
-    @user.create_reset_digest
-    @user.send_password_reset_email
-    flash[:info] = t "gmail.resetpass.instructionsemail"
-    redirect_to root_url
+    @user = User.find_by email: params[:password_reset][:email].downcase
+    if @user
+      @user.create_reset_digest
+      @user.send_password_reset_email
+      flash[:info] = t "gmail.resetpass.instructionsemail"
+      redirect_to root_url
+    else
+      flash.now[:danger] = t "activerecord.flash.gmail.notfound"
+      render :new
+    end
   end
 
   def update
@@ -36,7 +42,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def valid_user
-    return if @user.activated && @user.authenticated?(:reset, params[:id])
+    return if (@user && @user.activated && @user.authenticated?(:reset, params[:id]))
 
     flash[:danger] = t "user.nil"
     redirect_to root_url

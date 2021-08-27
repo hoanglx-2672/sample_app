@@ -14,6 +14,7 @@ en:
     nil_user: "User not found"
     pleaselgin: "please login"
     logout: "Logged out"
+    listuser: "list User"
   help:
     welcome: "Welcome to the help Page"
   header:
@@ -27,7 +28,7 @@ en:
       header: "hi %{user} Welcome to the Sample App"
       content: "Click on the link to activate your account %{user}"
     resetpass:
-      instructionsemail: "Email được gửi kèm theo hướng dẫn đặt lại mật khẩu"
+      instructionsemail: "Email sent with password reset instructions"
   user:
     name: "Your name"
     password: "password"

@@ -1,15 +1,15 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to t("name"), "#", id: "logo" %>
+    <%= link_to t("name"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li> <%= link_to t("header.eng"), locale: :en %> </li>
         <li> <%= link_to t("header.vie"), locale: :vi %> </li>
         <% if logged_in? %>
-          <li><%= @current_user.name %></li>
-          <li> <%= link_to t("editProfile"), edit_user_path(current_user) %></li>
-          <li> <%= link_to t("home.logout"), logout_path, method: :delete %></li>
-          <li><%= link_to t("listusers"), users_path %></li>
+          <li><%= link_to @current_user.name, current_user %></li>
+          <li><%= link_to t("home.index.settings"), edit_user_path(current_user) %></li>
+          <li><%= link_to t("home.index.listuser"), users_path %></li>
+          <li><%= link_to t("home.index.logout"), logout_path, method: :delete %></li>
         <% else %>
           <li> <%= link_to t("login.login"), login_path %></li>
           <li> <%= link_to t("signup"), signup_path %></li>

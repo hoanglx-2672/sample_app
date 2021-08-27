@@ -56,4 +56,12 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t "users.nil"
+    redirect_to root_path
+  end
 end

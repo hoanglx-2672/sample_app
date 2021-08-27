@@ -42,3 +42,7 @@ group :test do
   gem "webdrivers"
 end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "image_processing", "1.9.3"
+gem "mini_magick", "4.9.5"
+gem "active_storage_validations", "0.8.2"

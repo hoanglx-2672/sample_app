@@ -9,3 +9,6 @@ validator:
 perpag: 8
 sizeAva: 80
 expired: 1
+micropost:
+  sizeimg: 140
+length_image: 5

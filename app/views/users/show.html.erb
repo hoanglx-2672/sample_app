@@ -1,4 +1,4 @@
-<% content_for :title, @user.name %>
+<% content_for :title, t("home.index.account") %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -8,4 +8,16 @@
       </h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <%= render "follow_form" if logged_in? %>
+    <% if @microposts.any? %>
+      <h3><%= t "micropost.title" %> (<%= @microposts.count %>) </h3>
+      <ol class="microposts">
+         <%= render @microposts %>
+         <%= paginate @microposts %>
+      </ol>
+    <% else %>
+      <h3><%= t "micropost.not_post" %></h3>
+    <% end %>
+  </div>
 </div>
