@@ -26,6 +26,8 @@ en:
       title: "this is mail sample app"
       header: "hi %{user} Welcome to the Sample App"
       content: "Click on the link to activate your account %{user}"
+    resetpass:
+      instructionsemail: "Email được gửi kèm theo hướng dẫn đặt lại mật khẩu"
   user:
     name: "Your name"
     password: "password"
@@ -34,11 +36,14 @@ en:
     accactive: "Account activated!"
   activerecord:
     flash:
-      pleaselogin: "yeu cau dang nhap"
-      update: "cap nhat thong tin"
+      pleaselogin: "please login"
+      update: "update info"
       delete: "Delete fail!"
       gmail:
         active: "Invalid activation link"
+        notfound: "Pass word Not found"
+        expired: "password has expired"
+        pass_empty: "password empty"
     errors:
       user:
         attributes:
