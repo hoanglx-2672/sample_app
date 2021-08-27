@@ -2,6 +2,8 @@ en:
   hello: "Hello world"
   name: "Sample App"
   signin: "sign in"
+  sure?: "You Sure?"
+  delete: "delete"
   login:
     signupnow: "sign up now!"
     newuser: "new user?"
@@ -23,7 +25,12 @@ en:
     name: "Your name"
     password: "password"
     confirmpass: "confirm password"
+    deleted: "da xoa"
   activerecord:
+    flash:
+      pleaselogin: "yeu cau dang nhap"
+      update: "cap nhat thong tin"
+      delete: "Delete fail!"
     errors:
       user:
         attributes:

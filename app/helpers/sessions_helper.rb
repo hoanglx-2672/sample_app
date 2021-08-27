@@ -1,10 +1,4 @@
 module SessionsHelper
-  def log_out
-    forget(current_user)
-    session.delete :user_id
-    @current_user = nil
-  end
-
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by id: user_id
@@ -31,8 +25,14 @@ module SessionsHelper
 
   def forget user
     user.forget
-    cookies.delete(:user_id)
-    cookies.delete(:remember_token)
+    cookies.delete :user_id
+    cookies.delete :remember_token
+  end
+
+  def log_out
+    forget current_user
+    session.delete(:user_id)
+    @current_user = nil
   end
 
   def remember user
@@ -45,6 +45,27 @@ module SessionsHelper
     session[:user_id] = user.id
     log_in(user)
     params[:session][:remember] == "1" ? remember(user) : forget(user)
-    redirect_to user, notice: t("hello")
+    redirect_back_or user
+  end
+
+  def redirect_back_or default
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t "users.nil"
+    redirect_to root_path
+  end
+
+  def check_admin? user
+    current_user.admin? && !current_user?(user)
   end
 end

@@ -2,6 +2,8 @@ vi:
   hello: "chao the gioi"
   name: "Trang Web đơn giản"
   signin: "Dang nhap"
+  sure?: "ban chac chan"
+  delete: "xoa"
   login:
     signupnow: "dang ky ngay!"
     newuser: "chua dang nhap?"
@@ -24,7 +26,12 @@ vi:
     name: "ten cua ban"
     password: "mat khau"
     confirmpass: "nhap lai mat khau"
+    deleted: "da xoa"
   activerecord:
+    flash:
+      pleaselogin: "yeu cau dang nhap"
+      update: "cap nhat thong tin"
+      delete: "Delete fail!"
     errors:
       user:
         attributes:
