@@ -1,0 +1,11 @@
+vi:
+  hello: "chao the gioi"
+  name: "Trang Web đơn giản"
+  home:
+    welcome: "Chao mung ban Sample App"
+  help:
+    welcome: "Chao mung ban help Page"
+  header:
+    eng: "Anh"
+    vie: "Viet"
+  title: "hướng dẫn ruby on rails"
