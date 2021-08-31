@@ -1,0 +1,12 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to t("name"), "#", id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li> <%= link_to t("header.eng"), locale: :en %> </li>
+        <li> <%= link_to t("header.vie"), locale: :vi %> </li>
+        <li> <%= link_to t("signup"), signUp_path%></li>
+      </ul>
+    </nav>
+  </div>
+</header>
