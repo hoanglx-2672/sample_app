@@ -6,6 +6,7 @@ ruby "2.7.1"
 gem "bcrypt"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap-sass", "~> 3.4.1"
+gem "config"
 gem "jbuilder", "~> 2.7"
 gem "jquery-rails"
 gem "mysql2", ">= 0.5"
