@@ -3,6 +3,7 @@ en:
   name: "Sample App"
   home:
     welcome: "Welcome to the Sample App"
+    nil_user: "User not found"
   help:
     welcome: "Welcome to the help Page"
   header:

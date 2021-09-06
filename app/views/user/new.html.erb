@@ -1,13 +1,13 @@
-<h1> <%= t "signup" %></h1>
-
-<%= form_with model: @user, url: signUp_path do |form| %>
+<h1><%= t "signup" %></h1>
+<%= form_for @user, url: signup_path do |form| %>
+  <%= render "shared/message_errors" %>
   <div class="mb-3">
     <%= form.label t "user.email" %>
     <%= form.text_field :email, class: "form-control", placeholder: "example@gmail.com" %>
   </div>
   <div class="mb-3">
     <%= form.label t "user.name" %>
-    <%= form.text_field :username, class: "form-control"   %>
+    <%= form.text_field :name, class:"form-control",placeholder: t("user.name")  %>
   </div>
   <div class="mb-3">
     <%= form.label t "user.password" %>

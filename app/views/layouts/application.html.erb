@@ -10,7 +10,8 @@
   <body>
     <%= render "layouts/header" %>
     <div class="container">
-        <%= yield %>
+      <%= render "shared/flash" %>
+      <%= yield %>
     </div>
   </body>
 </html>

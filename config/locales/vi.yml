@@ -3,6 +3,7 @@ vi:
   name: "Trang Web đơn giản"
   home:
     welcome: "Chao mung ban Sample App"
+    nil_user: "Khong tim thay nguoi dung"
   help:
     welcome: "Chao mung ban help Page"
   header:
