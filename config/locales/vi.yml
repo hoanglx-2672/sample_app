@@ -1,9 +1,16 @@
 vi:
   hello: "chao the gioi"
   name: "Trang Web đơn giản"
+  signin: "Dang nhap"
+  login:
+    signupnow: "dang ky ngay!"
+    newuser: "chua dang nhap?"
+    login: "dang nhap"
   home:
     welcome: "Chao mung ban Sample App"
     nil_user: "Khong tim thay nguoi dung"
+    pleaselgin: "login truoc khi dang nhap"
+    logout: "Dang xuat"
   help:
     welcome: "Chao mung ban help Page"
   header:
@@ -24,3 +31,5 @@ vi:
             blank: "Khong de trong"
             valid: "định dạng đúng email"
             length: "độ dài 255 ký tự"
+        login:
+          invalid: "Invalid emails or password"
