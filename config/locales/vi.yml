@@ -6,6 +6,7 @@ vi:
     signupnow: "dang ky ngay!"
     newuser: "chua dang nhap?"
     login: "dang nhap"
+    remember: "nho tai khoan"
   home:
     welcome: "Chao mung ban Sample App"
     nil_user: "Khong tim thay nguoi dung"

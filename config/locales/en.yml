@@ -6,6 +6,7 @@ en:
     signupnow: "sign up now!"
     newuser: "new user?"
     login: "login"
+    remember: "remember user"
   home:
     welcome: "Welcome to the Sample App"
     nil_user: "User not found"
