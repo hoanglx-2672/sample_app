@@ -9,6 +9,11 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true,
     length: {maximum: Settings.validator.user.email.max_length},
     format: {with: VALID_EMAIL_REGEX}
+  validates :password, presence: true,
+    length: {minimum: Settings.validator.user.pass.pass_min}, allow_nil: true
+
+  scope :latest, ->{order created_at: :desc}
+  scope :activated_true, ->{where(activated: true)}
 
   class << self
     def digest string

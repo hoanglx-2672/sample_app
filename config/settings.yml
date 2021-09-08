@@ -4,3 +4,7 @@ validator:
       max_length: 255
     name:
       max_length: 155
+    pass:
+      pass_min: 6
+perpag: 8
+sizeAva: 80
