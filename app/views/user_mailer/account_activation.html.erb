@@ -1,0 +1,8 @@
+<h1><%= t "gmail.activeuser.title" %>
+</h1>
+<p><%= t "gmail.activeuser.header", user: @user.name %>,</p>
+<p>
+  <%= t "gmail.activeuser.content", user: @user.name %>
+</p>
+<%= link_to t("user.accactive"), edit_account_activation_url(id: 
+  @user.activation_token, email: @user.email) %>

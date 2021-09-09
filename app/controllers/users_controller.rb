@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      session[:user_id] = @user.id
-      flash[:success] = t "home.welcome"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t "user_mailer.check_mail"
+      redirect_to root_path
     else
       render :new
     end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     else
       flash[:danger] = t "activerecord.delete!"
     end
-    redirect_to users_path
+    redirect_to users_url
   end
 
   private
@@ -56,15 +56,23 @@ class UsersController < ApplicationController
     return if logged_in?
 
     store_location
-    flash[:danger] = t("activerecord.flash.pleaselogin")
-    redirect_to login_path
+    flash[:danger] = t "activerecord.flash.pleaselogin"
+    redirect_to login_url
   end
 
   def correct_user
-    redirect_to(root_path) unless current_user? @user
+    redirect_to(root_url) unless current_user? @user
   end
 
   def admin_user
     redirect_to(root_url) unless current_user.admin?
+  end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t "users.nil"
+    redirect_to root_url
   end
 end
