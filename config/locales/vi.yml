@@ -26,6 +26,8 @@ vi:
       title: "day la mail cua sample app"
       header: "chao %{user} Sample App chao mung ban"
       content: "click link duoi day de chay san pham %{user}"
+    resetpass:
+      instructionsemail: "Email sent with password reset instructions"
   user:
     email: "email"
     name: "ten cua ban"
@@ -38,6 +40,11 @@ vi:
       pleaselogin: "yeu cau dang nhap"
       update: "cap nhat thong tin"
       delete: "Delete fail!"
+      gmail:
+        active: "Invalid activation link"
+        notfound: "email address not found"
+        expired: "mat khau da het han"
+        pass_empty: "mat khau trong"
     errors:
       user:
         attributes:
